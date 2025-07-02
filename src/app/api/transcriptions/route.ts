@@ -65,7 +65,7 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Delete transcription (only if it belongs to the user)
-    const result = await db
+    await db
       .delete(transcriptions)
       .where(
         eq(transcriptions.id, transcriptionId)
